@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const RenderResult = () => {
+const RenderResult = ({}) => {
 
     return (
         <div className="columns is-mobile">
