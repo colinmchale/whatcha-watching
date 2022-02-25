@@ -8,6 +8,7 @@ const SearchArea = () => {
   const [genre, setGenre] = useState('');
   const [streamService, setStreamService] = useState('');
   const [keyword, setKeyword] = useState('');
+  const [pages, setPages] = useState('');
 
   const genreLibrary = {
     "Biography": "1",
@@ -47,6 +48,16 @@ const SearchArea = () => {
     console.log(genre);
     console.log(streamService);
     console.log(keyword);
+    // if (!type) {
+    //   setNameError('This field is required');
+    // }
+    // if (!genre) {
+    //   setMessageError('This field is required');
+    // }
+    // if (!streamService) {
+    //   setEmailError('This field is required');
+    //   return; 
+    // }
 
     let options = {
       method: 'GET',
@@ -55,7 +66,7 @@ const SearchArea = () => {
         country: 'us',
         service: streamService,
         type: type,
-        genre: '18',
+        genre: genre,
         page: '1',
         output_language: 'en',
         language: 'en'
@@ -68,6 +79,38 @@ const SearchArea = () => {
 
     axios.request(options).then(function (response) {
       console.log(response.data);
+      console.log(response.data.total_pages);
+      let pageNumbers = response.data.total_pages;
+      setPages(Math.floor(Math.random() * pageNumbers) + 1);
+      console.log(pages);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    
+
+    // let randomPage = ;
+    // console.log(randomPage);
+
+    let randomMovie = {
+      method: 'GET',
+      url: 'https://streaming-availability.p.rapidapi.com/search/basic',
+      params: {
+        country: 'us',
+        service: streamService,
+        type: type,
+        genre: genre,
+        page: pages,
+        output_language: 'en',
+        language: 'en'
+      },
+      headers: {
+        'x-rapidapi-host': 'streaming-availability.p.rapidapi.com',
+        'x-rapidapi-key': 'b80c64fe9emshef27d98ce1923b6p1f4017jsn1bb4451e68ed'
+      }
+    };
+
+    axios.request(randomMovie).then(function (data) {
+      console.log(data.data);
     }).catch(function (error) {
       console.error(error);
     });
@@ -121,6 +164,7 @@ const SearchArea = () => {
             <div className="control">
               <div className="select is-primary">
                 <select onChange={handleTypeChange}>
+                  <option hidden>Choose</option>
                   <option>Movie</option>
                   <option>Series</option>
                 </select>
@@ -133,14 +177,21 @@ const SearchArea = () => {
             <div className="control">
               <div className="select is-primary">
                 <select onChange={handleGenreChange}>
+                  <option hidden>Choose</option>
                   <option>Action</option>
                   <option>Adventure</option>
+                  <option>Animation</option>
                   <option>Comedy</option>
+                  <option>Crime</option>
+                  <option>Drama</option>
+                  <option>Fantasy</option>
+                  <option>History</option>
                   <option>Horror</option>
                   <option>Mystery</option>
                   <option>Romance</option>
-                  <option>Sci-Fi</option>
+                  <option>Science Fiction</option>
                   <option>Thriller</option>
+                  <option>Western</option>
                 </select>
               </div>
             </div>
@@ -151,11 +202,18 @@ const SearchArea = () => {
             <div className="control">
               <div className="select is-primary">
                 <select onChange={handleStreamServiceChange}>
-                  <option>Netflix</option>
-                  <option>Hulu</option>
-                  <option>Prime</option>
+                  <option hidden>Choose</option>
+                  <option>Apple</option>
+                  <option>Disney</option>
                   <option>HBO</option>
-                  <option>ShowTime</option>
+                  <option>Hulu</option>
+                  <option>Mubi</option>
+                  <option>Netflix</option>
+                  <option>Paramount</option>
+                  <option>Peacock</option>
+                  <option>Prime</option>
+                  <option>Showtime</option>
+                  <option>Starz</option>
                 </select>
               </div>
             </div>
