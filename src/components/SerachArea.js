@@ -8,7 +8,9 @@ const SearchArea = () => {
   const [genre, setGenre] = useState('');
   const [streamService, setStreamService] = useState('');
   const [keyword, setKeyword] = useState('');
-  const [pages, setPages] = useState('');
+  const [pages, setPages] = useState(1);
+  const [selection, setSelection] = useState({});
+  const [display, setDisplay] = useState('');
 
   const genreLibrary = {
     "Biography": "1",
@@ -58,7 +60,11 @@ const SearchArea = () => {
     //   setEmailError('This field is required');
     //   return; 
     // }
+    setDisplay(type);
+    firstSeach();
+  }
 
+  function firstSeach () {
     let options = {
       method: 'GET',
       url: 'https://streaming-availability.p.rapidapi.com/search/basic',
@@ -81,16 +87,23 @@ const SearchArea = () => {
       console.log(response.data);
       console.log(response.data.total_pages);
       let pageNumbers = response.data.total_pages;
-      setPages(Math.floor(Math.random() * pageNumbers) + 1);
-      console.log(pages);
+      let randomPage = setRandomPage(pageNumbers);
+      secondSearch(randomPage)
+      console.log("this is randomPage " + randomPage);
     }).catch(function (error) {
       console.error(error);
     });
-    
 
-    // let randomPage = ;
-    // console.log(randomPage);
+    console.log(pages)
+  }
 
+  function setRandomPage(pageNumbers) {
+    let randomPage = (Math.floor(Math.random() * pageNumbers) + 1);
+    setPages(randomPage)
+    return randomPage;
+  }
+
+  function secondSearch(randomPage) {
     let randomMovie = {
       method: 'GET',
       url: 'https://streaming-availability.p.rapidapi.com/search/basic',
@@ -99,7 +112,7 @@ const SearchArea = () => {
         service: streamService,
         type: type,
         genre: genre,
-        page: pages,
+        page: randomPage,
         output_language: 'en',
         language: 'en'
       },
@@ -110,11 +123,23 @@ const SearchArea = () => {
     };
 
     axios.request(randomMovie).then(function (data) {
-      console.log(data.data);
+      let searchData = data.data
+      console.log(searchData);
+      console.log("this is length " + searchData.results.length);
+      let randomResult = (Math.floor(Math.random() * searchData.results.length));
+      console.log("this is random result " + randomResult);
+      let randomSelection = searchData.results[randomResult];
+      console.log(randomSelection);
+      displaySearch(randomSelection)
     }).catch(function (error) {
       console.error(error);
     });
   };
+
+  function displaySearch(randomSelection) {
+    setSelection(randomSelection);
+    // return randomSelection;
+  }
 
   const handleTypeChange = (event) => {
     const { name, value } = event.target;
@@ -242,7 +267,10 @@ const SearchArea = () => {
       </div>
 
       <div>
-        <RenderResult />
+        <RenderResult 
+         selection={selection}
+         display={display}
+        />
       </div>
     </div>
   );
