@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import RenderResult from "./RenderResult";
+import StreamChoice from "./StreamChoice";
 import axios from "axios";
 
-const SearchArea = () => {
+const SearchArea = ({ country }) => {
 
   const [type, setType] = useState('');
   const [genre, setGenre] = useState('');
@@ -228,7 +229,7 @@ const SearchArea = () => {
               <div className="select is-primary">
                 <select onChange={handleStreamServiceChange}>
                   <option hidden>Choose</option>
-                  <option>Apple</option>
+                  {/* <option>Apple</option>
                   <option>Disney</option>
                   <option>HBO</option>
                   <option>Hulu</option>
@@ -238,7 +239,10 @@ const SearchArea = () => {
                   <option>Peacock</option>
                   <option>Prime</option>
                   <option>Showtime</option>
-                  <option>Starz</option>
+                  <option>Starz</option> */}
+                  <StreamChoice
+                  country = {country}
+                  />
                 </select>
               </div>
             </div>
