@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 
 const StreamChoice = ({ country }) => {
@@ -17,64 +17,69 @@ const StreamChoice = ({ country }) => {
 
     let disneyMubiPrime = ['RO', 'TR'];
 
-    // let disneyAndPrime = ["CO"];
+    // let disneyAndPrime = ['CO'];
 
     // let prime = ['IS'];
 
     let netflix = ['HU', 'EC', 'ID', 'KR', 'LT', 'MY', 'PE', 'VE'];
     
+    useEffect(() => {
+        checkCountry(country);
+      }, [1000]);
 
-    for (let i = 0; i < allNotUS.length; i++) {
-        const element = allNotUS[i];
-        if (country === element) {
-            whichCountryGroup = 1;
-        }
-    };
-    for (let j = 0; j < notDisney.length; j++) {
-        const element = notDisney[j];
-        if (country === element) {
-            whichCountryGroup = 2;
-        }
-    };
-    for (let k = 0; k < notNetflixOrDisney.length; k++) {
-        const element = notNetflixOrDisney[k];
-        if (country === element) {
-            whichCountryGroup = 3;
-        }
-    };
+    function checkCountry() {
+        for (let i = 0; i < allNotUS.length; i++) {
+            const element = allNotUS[i];
+            if (country === element) {
+                whichCountryGroup = 1;
+            }
+        };
+        for (let j = 0; j < notDisney.length; j++) {
+            const element = notDisney[j];
+            if (country === element) {
+                whichCountryGroup = 2;
+            }
+        };
+        for (let k = 0; k < notNetflixOrDisney.length; k++) {
+            const element = notNetflixOrDisney[k];
+            if (country === element) {
+                whichCountryGroup = 3;
+            }
+        };
 
-    if (country === 'CZ') {
-        whichCountryGroup = 4;
+        if (country === 'CZ') {
+            whichCountryGroup = 4;
+        }
+
+        for (let t = 0; t < mubiAndPrime.length; t++) {
+            const element = mubiAndPrime[t];
+            if (country === element) {
+                whichCountryGroup = 5;
+            }
+        };
+        for (let s = 0; s < disneyMubiPrime.length; s++) {
+            const element = disneyMubiPrime[s];
+            if (country === element) {
+                whichCountryGroup = 6;
+            }
+        };
+        if (country === 'CO') {
+            whichCountryGroup = 7;
+        }
+
+        if (country === 'IS') {
+            whichCountryGroup = 8;
+        }
+
+        for (let d = 0; d < netflix.length; d++) {
+            const element = netflix[d];
+            if (country === element) {
+                whichCountryGroup = 9;
+            }
+        };
     }
 
-    for (let t = 0; t < mubiAndPrime.length; t++) {
-        const element = mubiAndPrime[t];
-        if (country === element) {
-            whichCountryGroup = 5;
-        }
-    };
-    for (let s = 0; s < disneyMubiPrime.length; s++) {
-        const element = disneyMubiPrime[s];
-        if (country === element) {
-            whichCountryGroup = 6;
-        }
-    };
-    if (country === 'CO') {
-        whichCountryGroup = 7;
-    }
 
-    if (country === 'IS') {
-        whichCountryGroup = 8;
-    }
-
-    for (let d = 0; d < netflix.length; d++) {
-        const element = netflix[d];
-        if (country === element) {
-            whichCountryGroup = 9;
-        }
-    };
-
-    
     if (whichCountryGroup === 1) {
         return (
             <>
@@ -102,7 +107,7 @@ const StreamChoice = ({ country }) => {
             <option>Prime</option>
             </>
         )
-    }else if (whichCountryGroup === 4) {
+    } else if (whichCountryGroup === 4) {
         return(
             <>
             <option>Apple</option>
@@ -110,14 +115,14 @@ const StreamChoice = ({ country }) => {
             <option>Prime</option>
             </>
         )
-    }else if (whichCountryGroup === 5) {
+    } else if (whichCountryGroup === 5) {
         return(
             <>
             <option>Mubi</option>
             <option>Prime</option>
             </>
         )
-    }else if (whichCountryGroup === 6) {
+    } else if (whichCountryGroup === 6) {
         return(
             <>
             <option>Disney</option>
@@ -125,26 +130,26 @@ const StreamChoice = ({ country }) => {
             <option>Prime</option>
             </>
         )
-    }else if (whichCountryGroup === 7) {
+    } else if (whichCountryGroup === 7) {
         return(
             <>
             <option>Disney</option>
             <option>Prime</option>
             </>
         )
-    }else if (whichCountryGroup === 8) {
+    } else if (whichCountryGroup === 8) {
         return(
             <>
             <option>Prime</option>
             </>
         )
-    }else if (whichCountryGroup === 9) {
+    } else if (whichCountryGroup === 9) {
         return(
             <>
             <option>Netflix</option>
             </>
         )
-    }else {
+    } else {
         return(
             <>
             <option>Apple</option>
