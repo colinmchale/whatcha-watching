@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const RenderResult = ({ selection, display}) => {
+const RenderResult = ({ selection, display }) => {
 
 
     if (display === 'movie') {
@@ -24,7 +24,7 @@ const RenderResult = ({ selection, display}) => {
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src="https://bulma.io/images/placeholders/128x128.png" alt="Cover-Poster"/>
+                  <img src={selection.posterURLs.original} alt="Cover-Poster"/>
                 </figure>
               </div>
               <div className="media-content">
@@ -33,6 +33,8 @@ const RenderResult = ({ selection, display}) => {
                     <strong>{selection.title}</strong> <small>{selection.year}</small> <small>{selection.imdbRating}</small>
                     <br/>
                     {selection.overview}
+                    <br/>
+                    Cast: {selection.cast.map(member => <span key={member}> {member} /</span> )}
                   </p>
                 </div>
               </div>
@@ -61,7 +63,7 @@ const RenderResult = ({ selection, display}) => {
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src="https://bulma.io/images/placeholders/128x128.png" alt="Cover-Poster"/>
+                  <img src={selection.posterURLs.original} alt="Cover-Poster"/>
                 </figure>
               </div>
               <div className="media-content">
@@ -70,6 +72,9 @@ const RenderResult = ({ selection, display}) => {
                     <strong>{selection.title}</strong> <small>{selection.year}</small> <small>{selection.imdbRating}</small>
                     <br/>
                     {selection.overview}
+                    <br/>
+                    Cast: {selection.cast.map(member => <span key={member}> {member} /</span> )}
+                    {/* {allCountries.map(allCountry => <option key={allCountry}> {allCountry}</option> )} */}
                   </p>
                 </div>
               </div>

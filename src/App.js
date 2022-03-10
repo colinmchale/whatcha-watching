@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bulma/css/bulma.min.css";
-import SearchArea from "./components/SerachArea";
+import SearchArea from "./components/SearchArea";
 
 function App() {
 
