@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bulma/css/bulma.min.css";
 import SearchArea from "./components/SearchArea";
 
-function App() {
+function Container() {
 
   const [country, setCountry] = useState('us');
   const [language, setLanguage] = useState('en');
@@ -191,4 +191,4 @@ function App() {
   );
 }
 
-export default App;
+export default Container;
