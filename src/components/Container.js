@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
-import "bulma/css/bulma.min.css";
+// import "bulma/css/bulma.min.css";
+import 'materialize-css';
+// import { Button, Card, Row, Col } from 'react-materialize';
 import SearchArea from "./SearchArea";
 import {DarkModeContext} from "../context/DarkModeContext"
 
@@ -100,9 +102,9 @@ function Container() {
   });
 
   return (
-    <div className={darkMode ? `Container Container-dark` : `Container Container-light`}>
+    <div className={darkMode ? `fullPage fullPage-dark` : `fullPage fullPage-light`}>
       <div>
-        <nav>
+        <div className="section">
           {/* <div className="navbar-end navbar-item has-dropdown is-hoverable">
           <span className="navbar-link">
             Language
@@ -116,28 +118,35 @@ function Container() {
             </a>
           </div>
         </div> */}
-          <button
+          {/* <button
             className="navbar-end navbar-item js-modal-trigger button is-primary"
             data-target="modal-js-example"
           >
             Settings
-          </button>
+          </button> */}
 
-          <div class="field">
-            <input id="switchColorWarning" type="checkbox" name="switchColorWarning" class="switch is-warning" checked="checked" onClick={handleClick}/>
+        <div className="switch" id="lightSwitch">
+          <label>
+          Light
+          <input type="checkbox" onClick={handleClick}/>
+          <span className="lever"></span>
+          Dark
+          </label>
+        </div>
+
+          {/* <div className="field">
+            <input id="switchColorWarning" type="checkbox" name="switchColorWarning" className="switch is-warning" checked="checked" onClick={handleClick}/>
              <label for="switchColorWarning">Switch Light Mode</label>
-          </div>
+          </div> */}
 
-
-
-          <button >
+          {/* <button >
             MODE
-          </button>
-        </nav>
+          </button> */}
+        </div>
       </div>
       <SearchArea country={country} language={language} darkMode={darkMode} />
 
-      <div id="modal-js-example"  className="modal">
+      {/* <div id="modal-js-example"  className="modal">
         <div  className="modal-background"></div>
 
         <div  className="modal-content">
@@ -159,7 +168,7 @@ function Container() {
             <div className="control">
               <div className="select is-multiple is-primary">
                 <select multiple size="5" onChange={handleCountryChange}>
-                  <option hidden>Choose</option>
+                  <option hidden>Choose</option> */}
                   {/* <option>Action</option>
                   <option>Adventure</option>
                   <option>Animation</option>
@@ -174,13 +183,13 @@ function Container() {
                   <option>Science Fiction</option>
                   <option>Thriller</option>
                   <option>Western</option> */}
-                  {allCountries.map(allCountry => <option key={allCountry}> {allCountry}</option> )}
+                  {/* {allCountries.map(allCountry => <option key={allCountry}> {allCountry}</option> )}
                 </select>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="field">
+          {/* <div className="field">
             <label className="label">Light Mode:</label>
             <div className="control">
               <div className="select is-primary">
@@ -190,9 +199,9 @@ function Container() {
                 </select>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="field is-grouped">
+          {/* <div className="field is-grouped">
             <div className="control">
               <button className="button is-danger">
                 Close
@@ -200,10 +209,10 @@ function Container() {
             </div>
           </div>
           </div>
-        </div>
+        </div> 
 
         <button  className="modal-close is-large" aria-label="close"></button>
-      </div>
+      </div>*/}
     </div>
   );
 }

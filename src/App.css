@@ -1,16 +1,23 @@
-.Container {
+.fullPage {
     min-height: 100vh;
     min-width: 100vw;
 }
 
-
-.Container-dark {
+.fullPage-dark {
     background-color: blue;
     color: beige;
 }
 
-.Container-light {
+.fullPage-light {
     background-color: aquamarine;
+}
+
+#lightSwitch {
+    margin-left: 15px;
+}
+
+.title {
+    font-size: 325%;
 }
 
 .title-dark {
@@ -19,4 +26,16 @@
 
 .title-light {
     color: brown;
+}
+
+.inputBox {
+    margin-bottom: -10px;
+}
+
+#submitBtn {
+    margin-top: 30px;
+}
+
+.resultBox {
+    margin-top: 15px;
 }

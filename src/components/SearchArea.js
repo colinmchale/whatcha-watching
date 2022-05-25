@@ -180,12 +180,25 @@ const SearchArea = ({ country, darkMode }) => {
 
   return (
     <div>
-      <div className="columns is-centered is-vcentered"> 
-      <h1 className={darkMode ? `title is-1 title-dark` : `title is-1 title-light`}>Whatcha Watching?</h1>
+      <div className="col s12 center-align"> 
+      <h1 className={darkMode ? `title title-dark` : `title title-light`}>Whatcha Watching?</h1>
       </div>
-      <div className="columns is-mobile is-centered">
-        <div className="column is-6 is-offset-3">
-          <div className="field">
+      <div className="row">
+        <div className="col s10 offset-s1 m4 offset-m4">
+          <div className="input-field inputBox">
+            <span>
+              <label>Select Type:</label>
+            </span>
+            <div>
+              <select className="browser-default" onChange={handleTypeChange}>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="movie">Movie</option>
+              <option value="series">Series</option>
+            </select>
+            </div>
+          </div>
+
+          {/* <div className="field">
             <label className="label">Select Type:</label>
             <div className="control">
               <div className="select is-primary">
@@ -196,9 +209,36 @@ const SearchArea = ({ country, darkMode }) => {
                 </select>
               </div>
             </div>
+          </div> */}
+
+          <div className="input-field inputBox">
+            <span>
+              <label>Select Genre:</label>
+            </span>
+            <div>
+              <select className="browser-default" onChange={handleGenreChange}>
+              <option disabled selected>Choose your option</option>
+              {/* <option value="movie">Movie</option>
+              <option value="series">Series</option> */}
+                  <option>Action</option>
+                  <option>Adventure</option>
+                  <option>Animation</option>
+                  <option>Comedy</option>
+                  <option>Crime</option>
+                  <option>Drama</option>
+                  <option>Fantasy</option>
+                  <option>History</option>
+                  <option>Horror</option>
+                  <option>Mystery</option>
+                  <option>Romance</option>
+                  <option>Science Fiction</option>
+                  <option>Thriller</option>
+                  <option>Western</option>
+            </select>
+            </div>
           </div>
 
-          <div className="field">
+          {/* <div className="field">
             <label className="label">Select Genre:</label>
             <div className="control">
               <div className="select is-primary">
@@ -221,14 +261,28 @@ const SearchArea = ({ country, darkMode }) => {
                 </select>
               </div>
             </div>
+          </div> */}
+
+          <div className="input-field inputBox">
+            <span>
+              <label>Select Streaming Service:</label>
+            </span>
+            <div>
+              <select className="browser-default" onChange={handleStreamServiceChange}>
+              <option value="" disabled selected>Choose your option</option>
+              <StreamChoice
+              country = {country}
+              />
+            </select>
+            </div>
           </div>
 
-          <div className="field">
+          {/* <div className="field">
             <label className="label">Select Streaming Service:</label>
             <div className="control">
               <div className="select is-primary">
                 <select onChange={handleStreamServiceChange}>
-                  <option hidden>Choose</option>
+                  <option hidden>Choose</option> */}
                   {/* <option>Apple</option>
                   <option>Disney</option>
                   <option>HBO</option>
@@ -240,13 +294,13 @@ const SearchArea = ({ country, darkMode }) => {
                   <option>Prime</option>
                   <option>Showtime</option>
                   <option>Starz</option> */}
-                  <StreamChoice
+                  {/* <StreamChoice
                   country = {country}
                   />
                 </select>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="field">
             <label className="label">Keyword (optional):</label>
@@ -260,13 +314,19 @@ const SearchArea = ({ country, darkMode }) => {
             </div>
           </div> */}
 
-          <div className="field is-grouped">
+          <div className="center">
+          <button className="btn waves-effect waves-light" type="submit" name="action" id="submitBtn" onClick={handleFormSubmit}>Submit
+            <i className="material-icons right">live_tv</i>
+          </button>
+          </div>
+
+          {/* <div className="field is-grouped">
             <div className="control">
               <button className="button is-danger" onClick={handleFormSubmit}>
                 Submit
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
