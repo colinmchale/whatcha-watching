@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "bulma/css/bulma.min.css";
-import SearchArea from "./components/SearchArea";
+import SearchArea from "./SearchArea";
+import {DarkModeContext} from "../context/DarkModeContext"
 
 function Container() {
 
   const [country, setCountry] = useState('us');
   const [language, setLanguage] = useState('en');
   const [lightMode, setLightMode] = useState('light');
+
+  const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
+  const handleClick = () => {
+    toggleDarkMode();
+  };
 
   let allCountries = ['AE', 'AR', 'AT', 'AU', 'AZ', 'BE', 'BG', 'BR', 'CA', 'CH', 'CL', 'CO', 'CY', 'CZ', 'DE', 'DK', 'EC', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HK', 'HU', 'IE', 'ID', 'IL', 'IN', 'IS', 'IT', 'JP', 'KR', 'LT', 'LV', 'MD', 'MK', 'MX', 'MY', 'NL', 'NO', 'NZ', 'PA',  'PE', 'PH', 'PL', 'PT', 'RO', 'RS', 'RU', 'SE', 'SG', 'TH', 'TN', 'TR', 'UA', 'US', 'VE', 'VN', 'ZA']
 
@@ -94,9 +100,9 @@ function Container() {
   });
 
   return (
-    <div>
+    <div className={darkMode ? `Container Container-dark` : `Container Container-light`}>
       <div>
-        <nav className="navbar is-transparent">
+        <nav>
           {/* <div className="navbar-end navbar-item has-dropdown is-hoverable">
           <span className="navbar-link">
             Language
@@ -116,9 +122,20 @@ function Container() {
           >
             Settings
           </button>
+
+          <div class="field">
+            <input id="switchColorWarning" type="checkbox" name="switchColorWarning" class="switch is-warning" checked="checked" onClick={handleClick}/>
+             <label for="switchColorWarning">Switch Light Mode</label>
+          </div>
+
+
+
+          <button >
+            MODE
+          </button>
         </nav>
       </div>
-      <SearchArea country={country} language={language} />
+      <SearchArea country={country} language={language} darkMode={darkMode} />
 
       <div id="modal-js-example"  className="modal">
         <div  className="modal-background"></div>

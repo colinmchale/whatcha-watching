@@ -3,7 +3,7 @@ import RenderResult from "./RenderResult";
 import StreamChoice from "./StreamChoice";
 import axios from "axios";
 
-const SearchArea = ({ country }) => {
+const SearchArea = ({ country, darkMode }) => {
 
   const [type, setType] = useState('');
   const [genre, setGenre] = useState('');
@@ -181,7 +181,7 @@ const SearchArea = ({ country }) => {
   return (
     <div>
       <div className="columns is-centered is-vcentered"> 
-      <h1 className="title is-1 is">Whatcha Watching?</h1>
+      <h1 className={darkMode ? `title is-1 title-dark` : `title is-1 title-light`}>Whatcha Watching?</h1>
       </div>
       <div className="columns is-mobile is-centered">
         <div className="column is-6 is-offset-3">

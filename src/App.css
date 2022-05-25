@@ -1,0 +1,22 @@
+.Container {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+
+.Container-dark {
+    background-color: blue;
+    color: beige;
+}
+
+.Container-light {
+    background-color: aquamarine;
+}
+
+.title-dark {
+    color: beige;
+}
+
+.title-light {
+    color: brown;
+}
