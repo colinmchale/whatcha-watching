@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 
 const RenderResult = ({ selection, display }) => {
 
-
-    if (display === 'movie') {
+    if (typeof selection == 'undefined') {
+      return(
+        <div>
+          Testing
+        </div>
+    )
+    } else if (display === 'movie' && Object.keys(selection).length !== 0) {
         return (
         // <div className="columns is-mobile">
         //     <div className="column is-10 is-offset-1">
@@ -30,7 +35,7 @@ const RenderResult = ({ selection, display }) => {
               <div className="media-content">
                 <div className="content">
                   <p>
-                    <strong>{selection.title}</strong> <small>{selection.year}</small> <small>{selection.imdbRating}</small>
+                    <strong>{selection.title}</strong> <small>{selection.year}</small> <small>{selection.imdbRating}</small> <small>{selection.runtime} minutes</small>
                     <br/>
                     {selection.overview}
                     <br/>
@@ -43,7 +48,7 @@ const RenderResult = ({ selection, display }) => {
             </div>
         </div>
         )
-    } else if (display === 'series') {
+    } else if (display === 'series' && Object.keys(selection).length !== 0) {
         return(
             // <div className="columns is-mobile">
         //     <div className="column is-10 is-offset-1">
@@ -69,7 +74,7 @@ const RenderResult = ({ selection, display }) => {
               <div className="media-content">
                 <div className="content">
                   <p>
-                    <strong>{selection.title}</strong> <small>{selection.year}</small> <small>{selection.imdbRating}</small>
+                    <strong>{selection.title}</strong> <small>{selection.year}</small> <small>{selection.imdbRating}</small> <small>{selection.seasons} seasons</small>
                     <br/>
                     {selection.overview}
                     <br/>
@@ -83,7 +88,6 @@ const RenderResult = ({ selection, display }) => {
             </div>
         </div>
         )
-
     } else {
         return(
             <div>

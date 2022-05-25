@@ -8,7 +8,7 @@ const SearchArea = ({ country }) => {
   const [type, setType] = useState('');
   const [genre, setGenre] = useState('');
   const [streamService, setStreamService] = useState('');
-  const [keyword, setKeyword] = useState('');
+  // const [keyword, setKeyword] = useState('');
   const [pages, setPages] = useState(1);
   const [selection, setSelection] = useState({});
   const [display, setDisplay] = useState('');
@@ -50,7 +50,7 @@ const SearchArea = ({ country }) => {
     console.log(type); 
     console.log(genre);
     console.log(streamService);
-    console.log(keyword);
+    // console.log(keyword);
     // if (!type) {
     //   setNameError('This field is required');
     // }
@@ -131,7 +131,7 @@ const SearchArea = ({ country }) => {
       console.log("this is random result " + randomResult);
       let randomSelection = searchData.results[randomResult];
       console.log(randomSelection);
-      displaySearch(randomSelection)
+      displaySearch(randomSelection);
     }).catch(function (error) {
       console.error(error);
     });
@@ -169,14 +169,14 @@ const SearchArea = ({ country }) => {
     setStreamService(lowerStream);
   };
 
-  const handleKeywordChange = (event) => {
-    const { name, value } = event.target;
-    // console.log(name);
-    // console.log(value);
-    let lowerKeyword = value.toLowerCase();
-    console.log(lowerKeyword);
-    setKeyword(lowerKeyword);
-  };
+  // const handleKeywordChange = (event) => {
+  //   const { name, value } = event.target;
+  //   // console.log(name);
+  //   // console.log(value);
+  //   let lowerKeyword = value.toLowerCase();
+  //   console.log(lowerKeyword);
+  //   setKeyword(lowerKeyword);
+  // };
 
   return (
     <div>
@@ -248,7 +248,7 @@ const SearchArea = ({ country }) => {
             </div>
           </div>
 
-          <div className="field">
+          {/* <div className="field">
             <label className="label">Keyword (optional):</label>
             <div className="control">
               <input
@@ -258,7 +258,7 @@ const SearchArea = ({ country }) => {
                 placeholder="Type Here"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="field is-grouped">
             <div className="control">
