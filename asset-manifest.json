@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/whatcha-watching/static/css/main.122ada13.css",
-    "main.js": "/whatcha-watching/static/js/main.de34eedb.js",
+    "main.js": "/whatcha-watching/static/js/main.fa29f4eb.js",
     "static/js/787.7a342af3.chunk.js": "/whatcha-watching/static/js/787.7a342af3.chunk.js",
     "index.html": "/whatcha-watching/index.html",
     "main.122ada13.css.map": "/whatcha-watching/static/css/main.122ada13.css.map",
-    "main.de34eedb.js.map": "/whatcha-watching/static/js/main.de34eedb.js.map",
+    "main.fa29f4eb.js.map": "/whatcha-watching/static/js/main.fa29f4eb.js.map",
     "787.7a342af3.chunk.js.map": "/whatcha-watching/static/js/787.7a342af3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.122ada13.css",
-    "static/js/main.de34eedb.js"
+    "static/js/main.fa29f4eb.js"
   ]
 }
