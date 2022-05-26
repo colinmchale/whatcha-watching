@@ -9,7 +9,7 @@ const RenderResult = ({ selection, display, darkMode }) => {
             <div className="col s10 offset-s1 m8 offset-m2">
               <div className={darkMode ? `row card grey darken-4` : `row card grey lighten-4`}>
                 <div className="card-content white-text">
-                <p className="center">
+                <p className={darkMode ? `center white-text` : `center black-text`}>
                   Sorry, there are no results for the options you've entered. Please make another selection.
                 </p>
                 </div>
