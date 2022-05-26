@@ -4,12 +4,13 @@
 }
 
 .fullPage-dark {
-    background-color: blue;
-    color: beige;
+    background-color: #292929;
+    color: #FFBA08;
 }
 
 .fullPage-light {
-    background-color: aquamarine;
+    background-color: #E0E0E2;
+    color: #D6D6B1;
 }
 
 #lightSwitch {
@@ -21,11 +22,23 @@
 }
 
 .title-dark {
-    color: beige;
+    color: #FFEA00;
 }
 
 .title-light {
-    color: brown;
+    color: #D91C1C;
+}
+
+.subtitle {
+    margin-top: -10px;
+}
+
+.subtitle-dark {
+    color: #FFDD00;
+}
+
+.subtitle-light {
+    color: #03071E;
 }
 
 .inputBox {

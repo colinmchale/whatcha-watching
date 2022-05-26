@@ -129,7 +129,7 @@ function Container() {
           <label>
           Light
           <input type="checkbox" onClick={handleClick}/>
-          <span className="lever"></span>
+          <span className={darkMode ? `lever yellow` : `lever red darken-4`}></span>
           Dark
           </label>
         </div>

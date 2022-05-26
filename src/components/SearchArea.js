@@ -182,6 +182,7 @@ const SearchArea = ({ country, darkMode }) => {
     <div>
       <div className="col s12 center-align"> 
       <h1 className={darkMode ? `title title-dark` : `title title-light`}>Whatcha Watching?</h1>
+      <p className={darkMode ? `subtitle subtitle-dark` : `subtitle subtitle-light`}>The best movie/series generator! Please select all of the options below and click submit to get your next favorite movie or series.</p>
       </div>
       <div className="row">
         <div className="col s10 offset-s1 m4 offset-m4">
@@ -190,7 +191,7 @@ const SearchArea = ({ country, darkMode }) => {
               <label>Select Type:</label>
             </span>
             <div>
-              <select className="browser-default" onChange={handleTypeChange}>
+              <select className="browser-default amber accent-4 white-text" onChange={handleTypeChange}>
               <option value="" disabled selected>Choose your option</option>
               <option value="movie">Movie</option>
               <option value="series">Series</option>
@@ -216,7 +217,7 @@ const SearchArea = ({ country, darkMode }) => {
               <label>Select Genre:</label>
             </span>
             <div>
-              <select className="browser-default" onChange={handleGenreChange}>
+              <select className="browser-default orange darken-3 white-text" onChange={handleGenreChange}>
               <option disabled selected>Choose your option</option>
               {/* <option value="movie">Movie</option>
               <option value="series">Series</option> */}
@@ -268,7 +269,7 @@ const SearchArea = ({ country, darkMode }) => {
               <label>Select Streaming Service:</label>
             </span>
             <div>
-              <select className="browser-default" onChange={handleStreamServiceChange}>
+              <select className="browser-default deep-orange darken-2 white-text" onChange={handleStreamServiceChange}>
               <option value="" disabled selected>Choose your option</option>
               <StreamChoice
               country = {country}
@@ -315,7 +316,7 @@ const SearchArea = ({ country, darkMode }) => {
           </div> */}
 
           <div className="center">
-          <button className="btn waves-effect waves-light" type="submit" name="action" id="submitBtn" onClick={handleFormSubmit}>Submit
+          <button className="btn waves-effect waves-light red darken-4" type="submit" name="action" id="submitBtn" onClick={handleFormSubmit}>Submit
             <i className="material-icons right">live_tv</i>
           </button>
           </div>
@@ -334,6 +335,7 @@ const SearchArea = ({ country, darkMode }) => {
         <RenderResult 
          selection={selection}
          display={display}
+         darkMode={darkMode}
         />
       </div>
     </div>
