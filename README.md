@@ -15,6 +15,7 @@ Warning: There are a few combinations of inputs that do not yield results. For t
 
 ## Usage  
 ![Screenshot of App](./src/components/images/WhatchaWatching.png)
+[Link to Deployed App](https://colinmchale.github.io/whatcha-watching/)  
 This application was made for those in need of new movie and/or series suggestions given their specific streaming platforms. Built utilizing Javascript, React, and Materialize.
 
 ## License 
