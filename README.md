@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Whatcha Watching
+![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description  
+Ever looking for something to watch, whether it be a movie or a new series, and have trouble setttling on something as time keeps being wasted? Well fear no more. This movie/series generator is built to randomly select an option for the user based on the user's preferences. There are three input rneeded from the user before a selection is made. The first required input is whether the user is looking for a movie or series. The second input is the genre of moive/series the user will want to watch. And the last is the streaming service the user will be utilizing to watch a given movie/series. Once these three inputs have been entered utilizing the dropdowns, the user may click submit and a selection will appear towards the bottom of the page.  
+Warning: There are a few combinations of inputs that do not yield results. For these, the selection box that appears after the user clicks sumbit should instruct the user to change one of the previous inputs in an attempt to find a combination that will provide a result.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents  
+[Description](#description)    
+[Usage](#usage)  
+[License](#license)   
+[Tests](#tests)  
+[Questions](#questions)  
 
-### `npm start`
+## Usage  
+![Screenshot of App](./src/components/images/WhatchaWatching.png)
+This application was made for those in need of new movie and/or series suggestions given their specific streaming platforms. Built utilizing Javascript, React, and Materialize.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## License 
+MPL 2.0
+[Link to License](https://www.mozilla.org/en-US/MPL/2.0/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tests  
+Select one of the dropdown options in each of the three input sections and click submit. The user should receive a movie/series recommendation, and if not, should receive a warning that there are no movies/series available for the user sumbitted selections. Please also test that the colors of the application change as the user clicks on the light/dark switch in the upper left corner.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Questions
+Link to github: [Click Here](https://github.com/colinmchale)  
+Please submit any additional questions you may have in an email to colin.mchale22@gmail.com
